@@ -81,15 +81,15 @@ export default function Navigation() {
         <a
           className={styles.brand}
           href="#presentation"
-          aria-label="Your Name — back to introduction"
+          aria-label="Harry Ruiz — back to introduction"
           onClick={() => setActiveSection("presentation")}
         >
-          YN<span aria-hidden="true">.</span>
+          HR<span aria-hidden="true">.</span>
         </a>
         <p className={styles.brandDescriptor}>
-          Designer
+          Software
           <br />
-          &amp; Developer
+          Engineering Student
         </p>
       </div>
 
@@ -120,13 +120,9 @@ export default function Navigation() {
         </ol>
       </nav>
 
-      <div className={styles.headerFooter}>
-        <p className={styles.availability}>
-          <span className={styles.statusDot} aria-hidden="true" />
-          Available for select projects
-        </p>
-        <p className={styles.location}>Based in your city · Working worldwide</p>
-      </div>
+      <p className={styles.location}>
+        Mayagüez, Puerto Rico · Third-year student
+      </p>
     </header>
   );
 }

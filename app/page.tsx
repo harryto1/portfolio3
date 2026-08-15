@@ -5,107 +5,124 @@ import styles from "./page.module.css";
 
 const experiences = [
   {
-    period: "2024 — Now",
-    role: "Senior Product Designer",
-    company: "Northstar Studio",
+    period: "Jul — Dec 2025",
+    role: "Software Developer",
+    company: "MiUni LLC · Puerto Rico",
+    companyUrl: "https://www.miunipr.com",
     description:
-      "Leading end-to-end product design for early-stage teams, from shaping the problem to shipping polished, scalable experiences.",
-    skills: ["Product strategy", "Design systems", "Prototyping"],
-  },
-  {
-    period: "2022 — 2024",
-    role: "Product Designer",
-    company: "Orbit Labs",
-    description:
-      "Designed collaborative tools used by distributed teams and partnered closely with engineering to raise the quality bar across the product.",
-    skills: ["UX research", "Interaction design", "React"],
-  },
-  {
-    period: "2020 — 2022",
-    role: "UI/UX Designer",
-    company: "Independent",
-    description:
-      "Helped ambitious founders turn early ideas into clear brands, thoughtful interfaces, and launch-ready digital products.",
-    skills: ["Art direction", "Web design", "No-code"],
+      "Developed responsive mobile applications for iOS and Android with a cross-functional team. Improved security by encrypting and hiding sensitive client data, and refactored Flutter frontend flows to use Firebase Functions for selected API calls.",
+    skills: ["Flutter", "Dart", "Firebase", "Git"],
   },
 ] as const;
 
 const education = [
   {
-    period: "2016 — 2020",
-    degree: "B.Sc. in Interaction Design",
-    school: "University of Your City",
-    note: "Focused on human-computer interaction, visual systems, and product development.",
-  },
-  {
-    period: "2023",
-    degree: "Advanced Web Development",
-    school: "Online Institute",
-    note: "Intensive specialization in modern React, accessibility, and frontend architecture.",
+    period: "2024 — Expected 2029",
+    degree: "Bachelor of Science in Software Engineering",
+    school: "University of Puerto Rico — Mayagüez",
+    schoolUrl: "https://www.uprm.edu",
+    note: "Third-year student with a 4.0 GPA. Relevant coursework includes Data Structures, Advanced Programming, Fundamentals of Computing, and Calculus I & II. I also participate in coding competitions and hackathons while independently studying AI and machine learning.",
   },
 ] as const;
 
 const projects = [
   {
     number: "01",
-    title: "Astra Finance",
-    category: "Fintech · Product design",
+    title: "Fórmula al Éxito",
+    category: "Full-stack platform · Jan 2025 · 6 months",
     description:
-      "A calmer way for independent professionals to understand cash flow and make confident financial decisions.",
-    tags: ["Strategy", "UX/UI", "Design system"],
+      "A full-stack tutoring platform with authentication, booking, live chat, video calls, interactive whiteboards, recordings, learning materials, and an admin dashboard. Built with Flask, Jinja, JavaScript, SQLAlchemy, PostgreSQL, and Flask-SocketIO, with cookie-based session management so students can book without creating an account.",
+    tags: [
+      "Flask",
+      "Python",
+      "PostgreSQL",
+      "SQLAlchemy",
+      "Socket.IO",
+      "JavaScript",
+    ],
     artClass: styles.projectArtCobalt,
+    link: "https://www.formulaalexito.com",
+    linkLabel: "Visit live site",
+    features: [
+      "Authentication and authorization",
+      "Real-time chat and video conferencing",
+      "Interactive whiteboards and recordings",
+      "Learning resource library",
+      "User and content administration",
+      "Responsive mobile and desktop experience",
+    ],
+    challenges: [
+      "Integrating real-time video and chat",
+      "Designing an intuitive tutoring workflow",
+      "Protecting user data and privacy",
+      "Managing complex database relationships",
+    ],
+    learnings: [
+      "Advanced Flask development",
+      "Hosting and deployment strategies",
+      "Socket programming with Flask-SocketIO",
+      "SQLAlchemy and PostgreSQL database design",
+    ],
   },
   {
     number: "02",
-    title: "Field Notes",
-    category: "Mobile · Design & build",
+    title: "Atabei",
+    category: "Mobile application · May 2025 · 2 months",
     description:
-      "A location-aware journal that turns everyday observations into a personal, searchable field guide.",
-    tags: ["Research", "Product design", "React Native"],
+      "An in-progress, Twitter-inspired social application for iOS and Android. It uses Flutter, Bloc, Dart, and Firebase for authentication, a real-time timeline, post creation and editing, profiles, user search, notifications, and Firestore updates. Built as a learning project for clean architecture, state management, and cross-platform development.",
+    tags: ["Flutter", "Bloc", "Dart", "Firebase"],
     artClass: styles.projectArtCoral,
-  },
-  {
-    number: "03",
-    title: "Northstar OS",
-    category: "SaaS · Design system",
-    description:
-      "A flexible operating system that helps small creative teams plan work without losing momentum.",
-    tags: ["Design system", "Frontend", "Accessibility"],
-    artClass: styles.projectArtLime,
+    link: "https://github.com/harryto1/atabei",
+    linkLabel: "View on GitHub",
+    features: [
+      "Firebase authentication",
+      "Real-time timeline and Firestore updates",
+      "Post creation and editing",
+      "User profiles and search",
+      "Push notification system",
+      "Cross-platform iOS and Android support",
+    ],
+    challenges: [
+      "Real-time data synchronization",
+      "Responsive UI across screen sizes",
+      "State management with Bloc",
+      "Firebase Cloud Messaging integration",
+    ],
+    learnings: [
+      "Flutter clean architecture",
+      "Effective state management with Bloc",
+      "Firebase services and integration",
+      "Cross-platform mobile development",
+    ],
   },
 ] as const;
 
 const skillGroups = [
   {
     number: "01",
-    title: "Design",
-    items: ["Product design", "UX/UI", "Design systems", "Prototyping"],
+    title: "Frontend",
+    items: ["React", "TypeScript", "HTML / CSS", "JavaScript"],
   },
   {
     number: "02",
-    title: "Development",
-    items: ["TypeScript", "React / Next.js", "CSS", "Motion"],
+    title: "Backend",
+    items: ["Flask — 80%", "PostgreSQL — 70%", "REST APIs — 75%"],
   },
   {
     number: "03",
-    title: "Thinking",
-    items: ["Product strategy", "User research", "Workshops", "Storytelling"],
+    title: "Mobile",
+    items: ["Flutter", "Dart", "Bloc", "Firebase"],
   },
   {
     number: "04",
     title: "Tools",
-    items: ["Figma", "GitHub", "Linear", "Framer"],
+    items: ["Git — 90%", "Firebase — 80%", "VS Code — 95%"],
   },
 ] as const;
 
 function ArrowIcon() {
   return (
-    <svg
-      viewBox="0 0 20 20"
-      fill="none"
-      aria-hidden="true"
-      focusable="false"
-    >
+    <svg viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false">
       <path d="M4 10h11M10.5 5.5 15 10l-4.5 4.5" />
     </svg>
   );
@@ -146,32 +163,31 @@ export default function Home() {
           aria-labelledby="introduction-title"
         >
           <div className={styles.heroTopline}>
-            <p>Portfolio / 2026</p>
+            <p>Software Engineering / 2026</p>
             <p>Scroll to explore</p>
           </div>
 
           <div className={styles.heroContent}>
-            <p className={styles.eyebrow}>Hello, I&apos;m Your Name</p>
-            <h1 id="introduction-title">
-              I design &amp; build digital experiences that{" "}
-              <span>feel inevitable.</span>
-            </h1>
+            <p className={styles.eyebrow}>
+              Third-year Software Engineering Student
+            </p>
+            <h1 id="introduction-title">I&apos;m Harry Ruiz.</h1>
           </div>
 
           <div className={styles.heroBottom}>
             <p className={styles.heroSummary}>
-              A product-minded designer and developer turning complex ideas into
-              useful, memorable products.
+              A software engineering student passionate about building
+              innovative solutions and learning new technologies.
             </p>
 
             <dl className={styles.heroDetails}>
               <div>
                 <dt>Currently</dt>
-                <dd>Senior Product Designer</dd>
+                <dd>B.Sc. Software Engineering</dd>
               </div>
               <div>
                 <dt>Focus</dt>
-                <dd>Design + Frontend</dd>
+                <dd>AI research &amp; engineering</dd>
               </div>
             </dl>
 
@@ -198,37 +214,38 @@ export default function Home() {
 
           <div className={styles.aboutLayout}>
             <p className={styles.aboutLead}>
-              I sit at the intersection of{" "}
-              <span>design, technology, and strategy</span> — making things
-              simpler without making them ordinary.
+              I&apos;m driven by coding, problem-solving, mathematics, and{" "}
+              <span>the science behind intelligent systems.</span>
             </p>
 
             <div className={styles.aboutCopy}>
               <p>
-                I care about the small details that shape how a product feels,
-                and the big decisions that determine whether it should exist at
-                all. My process is collaborative, curious, and grounded in real
-                user needs.
+                I am a third-year Software Engineering student at the University
+                of Puerto Rico — Mayagüez. My long-term goal is to become an AI
+                researcher and engineer, and I am committed to building the
+                technical expertise needed to get there.
               </p>
               <p>
-                Away from the screen, you can usually find me collecting books,
-                taking long walks, or learning something I am not yet good at.
+                I am advancing my knowledge through Data Structures and other
+                coursework while continuously exploring new programming
+                languages and frameworks, driven by a passion for learning and
+                growth as a developer.
               </p>
             </div>
           </div>
 
-          <dl className={styles.metrics} aria-label="Career highlights">
+          <dl className={styles.metrics} aria-label="Student highlights">
             <div>
-              <dt>04+</dt>
-              <dd>Years of experience</dd>
+              <dt>2+</dt>
+              <dd>Years coding &amp; developing</dd>
             </div>
             <div>
-              <dt>20</dt>
-              <dd>Products launched</dd>
+              <dt>10+</dt>
+              <dd>Web &amp; mobile projects</dd>
             </div>
             <div>
-              <dt>06</dt>
-              <dd>Countries collaborated with</dd>
+              <dt>5+</dt>
+              <dd>Languages &amp; frameworks</dd>
             </div>
           </dl>
         </section>
@@ -248,7 +265,15 @@ export default function Home() {
                 <p className={styles.timelinePeriod}>{experience.period}</p>
                 <div className={styles.timelineRole}>
                   <h3>{experience.role}</h3>
-                  <p>{experience.company}</p>
+                  <p>
+                    <a
+                      href={experience.companyUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {experience.company} <span aria-hidden="true">↗</span>
+                    </a>
+                  </p>
                 </div>
                 <div className={styles.timelineDetails}>
                   <p>{experience.description}</p>
@@ -278,7 +303,11 @@ export default function Home() {
                 <p className={styles.educationPeriod}>{item.period}</p>
                 <div>
                   <h3>{item.degree}</h3>
-                  <p className={styles.educationSchool}>{item.school}</p>
+                  <p className={styles.educationSchool}>
+                    <a href={item.schoolUrl} target="_blank" rel="noreferrer">
+                      {item.school} <span aria-hidden="true">↗</span>
+                    </a>
+                  </p>
                   <p className={styles.educationNote}>{item.note}</p>
                 </div>
               </article>
@@ -315,14 +344,60 @@ export default function Home() {
                   <p className={styles.projectDescription}>
                     {project.description}
                   </p>
-                  <ul className={styles.projectTags} aria-label="Project services">
+                  <ul
+                    className={styles.projectTags}
+                    aria-label="Project technologies"
+                  >
                     {project.tags.map((tag) => (
                       <li key={tag}>{tag}</li>
                     ))}
                   </ul>
-                  <p className={styles.projectStatus}>
-                    Case study coming soon <ArrowIcon />
-                  </p>
+                  <details className={styles.projectDetails}>
+                    <summary>
+                      Explore project details
+                      <span aria-hidden="true">+</span>
+                    </summary>
+                    <div className={styles.projectDetailGroups}>
+                      <section>
+                        <h4>Key features</h4>
+                        <ul>
+                          {project.features.map((feature) => (
+                            <li key={feature}>{feature}</li>
+                          ))}
+                        </ul>
+                      </section>
+                      <section>
+                        <h4>Challenges</h4>
+                        <ul>
+                          {project.challenges.map((challenge) => (
+                            <li key={challenge}>{challenge}</li>
+                          ))}
+                        </ul>
+                      </section>
+                      <section>
+                        <h4>What I learned</h4>
+                        <ul>
+                          {project.learnings.map((learning) => (
+                            <li key={learning}>{learning}</li>
+                          ))}
+                        </ul>
+                      </section>
+                    </div>
+                  </details>
+                  <a
+                    className={styles.projectStatus}
+                    href={project.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={
+                      project.linkLabel +
+                      ": " +
+                      project.title +
+                      " (opens in a new tab)"
+                    }
+                  >
+                    {project.linkLabel} <ArrowIcon />
+                  </a>
                 </div>
               </article>
             ))}
@@ -340,8 +415,8 @@ export default function Home() {
 
           <div className={styles.skillsIntro}>
             <p>
-              A hybrid toolkit for taking ideas from{" "}
-              <span>rough question to refined product.</span>
+              From responsive web interfaces to cross-platform mobile apps,{" "}
+              <span>I learn by shipping real software.</span>
             </p>
           </div>
 
@@ -367,36 +442,34 @@ export default function Home() {
           className={styles.contact}
           aria-labelledby="contact-title"
         >
-          <p className={styles.contactEyebrow}>Have a project in mind?</p>
+          <p className={styles.contactEyebrow}>
+            New opportunities, exciting projects, or just saying hello
+          </p>
           <h2 id="contact-title">
-            Let&apos;s make something <span>worth remembering.</span>
+            Let&apos;s build something <span>reliable and useful.</span>
           </h2>
 
           <a
             className={styles.emailLink}
-            href="mailto:hello@yourname.dev"
-            aria-label="Email hello at yourname dot dev"
+            href="mailto:harry.ruiz6@upr.edu"
+            aria-label="Email Harry Ruiz at harry dot ruiz six at upr dot edu"
           >
-            hello@yourname.dev
+            harry.ruiz6@upr.edu
             <ArrowIcon />
           </a>
 
           <div className={styles.contactFooter}>
-            <p>© 2026 Your Name</p>
-            <nav aria-label="Social links">
+            <p>© 2026 Harry Ruiz</p>
+            <nav aria-label="Contact and social links">
               <a
-                href="https://www.linkedin.com/in/yourusername"
-                target="_blank"
-                rel="noreferrer"
-              >
-                LinkedIn <span aria-hidden="true">↗</span>
-              </a>
-              <a
-                href="https://github.com/yourusername"
+                href="https://github.com/harryto1"
                 target="_blank"
                 rel="noreferrer"
               >
                 GitHub <span aria-hidden="true">↗</span>
+              </a>
+              <a href="tel:+17873859381">
+                +1 (787) 385-9381 <span aria-hidden="true">↗</span>
               </a>
             </nav>
             <a href="#presentation">

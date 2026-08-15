@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Your Name — Designer & Developer",
+  title: "Harry Ruiz — Software Engineering Student",
   description:
-    "Portfolio of a product-minded designer and developer creating thoughtful digital experiences.",
+    "Portfolio of Harry Ruiz, a third-year Software Engineering student focused on full-stack, mobile, and AI engineering.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
