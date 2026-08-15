@@ -17,6 +17,11 @@ const navigationItems = [
 export default function Navigation() {
   const [activeSection, setActiveSection] = useState("presentation");
   const frameRef = useRef<number | null>(null);
+  const navigationListRef = useRef<HTMLOListElement>(null);
+  const indicatorRef = useRef<HTMLLIElement>(null);
+  const navigationLinkRefs = useRef<
+    Record<string, HTMLAnchorElement | null>
+  >({});
 
   useEffect(() => {
     const sections = navigationItems
@@ -75,6 +80,42 @@ export default function Navigation() {
     };
   }, []);
 
+  useEffect(() => {
+    let isCurrent = true;
+
+    const updateIndicator = () => {
+      const activeLink = navigationLinkRefs.current[activeSection];
+      const indicator = indicatorRef.current;
+
+      if (!activeLink || !indicator) {
+        return;
+      }
+
+      indicator.style.width = `${activeLink.offsetWidth}px`;
+      indicator.style.transform = `translate3d(${activeLink.offsetLeft}px, 0, 0)`;
+      indicator.dataset.ready = "true";
+    };
+
+    const animationFrame = window.requestAnimationFrame(updateIndicator);
+    const resizeObserver = new ResizeObserver(updateIndicator);
+
+    if (navigationListRef.current) {
+      resizeObserver.observe(navigationListRef.current);
+    }
+
+    document.fonts.ready.then(() => {
+      if (isCurrent) {
+        updateIndicator();
+      }
+    });
+
+    return () => {
+      isCurrent = false;
+      window.cancelAnimationFrame(animationFrame);
+      resizeObserver.disconnect();
+    };
+  }, [activeSection]);
+
   return (
     <header className={styles.siteHeader}>
       <div className={styles.headerInner}>
@@ -89,7 +130,7 @@ export default function Navigation() {
         </a>
 
         <nav className={styles.navigation} aria-label="Primary navigation">
-          <ol className={styles.navigationList}>
+          <ol className={styles.navigationList} ref={navigationListRef}>
             {navigationItems.map((item) => {
               const isActive = activeSection === item.id;
 
@@ -102,12 +143,20 @@ export default function Navigation() {
                     href={`#${item.id}`}
                     aria-current={isActive ? "location" : undefined}
                     onClick={() => setActiveSection(item.id)}
+                    ref={(element) => {
+                      navigationLinkRefs.current[item.id] = element;
+                    }}
                   >
                     {item.label}
                   </a>
                 </li>
               );
             })}
+            <li
+              className={styles.navigationIndicator}
+              ref={indicatorRef}
+              aria-hidden="true"
+            />
           </ol>
         </nav>
 

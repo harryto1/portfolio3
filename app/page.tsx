@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 
 import Navigation from "./navigation";
 import styles from "./page.module.css";
+import ProjectShowcase from "./project-showcase";
 
 const experiences = [
   {
@@ -26,41 +27,6 @@ const education = [
   },
 ] as const;
 
-const projects = [
-  {
-    number: "01",
-    title: "Fórmula al Éxito",
-    category: "Full-stack · 2025",
-    description:
-      "A tutoring platform with booking, live chat, video calls, whiteboards, recordings, learning resources, and admin tools.",
-    tags: ["Flask", "PostgreSQL", "Socket.IO", "JavaScript"],
-    image: "/faeBanner.png",
-    imageAlt: "Fórmula al Éxito tutoring platform homepage",
-    logo: "/thumbnail_Logo_sin_FAE_sin_diseños_PNG.png",
-    gallery: [],
-    link: "https://www.formulaalexito.com",
-    linkLabel: "Visit live site",
-  },
-  {
-    number: "02",
-    title: "Atabei",
-    category: "Mobile · 2025",
-    description:
-      "An in-progress Flutter social app with authentication, real-time posts, profiles, search, and notifications for iOS and Android.",
-    tags: ["Flutter", "Bloc", "Dart", "Firebase"],
-    image: "/atabei_banner.png",
-    imageAlt: "Atabei social app timeline",
-    logo: null,
-    gallery: [
-      { src: "/atabei_img_1.png", alt: "Atabei profile screen" },
-      { src: "/atabei_img_2.png", alt: "Atabei search screen" },
-      { src: "/atabei_img_3.png", alt: "Atabei feed screen" },
-    ],
-    link: "https://github.com/harryto1/atabei",
-    linkLabel: "View on GitHub",
-  },
-] as const;
-
 const skillGroups = [
   {
     title: "Frontend",
@@ -68,7 +34,7 @@ const skillGroups = [
   },
   {
     title: "Backend",
-    items: ["Flask — 80%", "PostgreSQL — 70%", "REST APIs — 75%"],
+    items: ["Flask", "PostgreSQL", "REST APIs"],
   },
   {
     title: "Mobile",
@@ -76,7 +42,7 @@ const skillGroups = [
   },
   {
     title: "Tools",
-    items: ["Git — 90%", "Firebase — 80%", "VS Code — 95%"],
+    items: ["Git", "Firebase", "VS Code"],
   },
 ] as const;
 
@@ -302,79 +268,8 @@ export default function Home() {
               Projects
             </SectionHeading>
 
-            <div className={`${styles.sectionContent} ${styles.projectGrid}`}>
-              {projects.map((project) => (
-                <article className={styles.projectCard} key={project.title}>
-                  <div className={styles.projectVisual}>
-                    <Image
-                      className={styles.projectImage}
-                      src={project.image}
-                      alt={project.imageAlt}
-                      fill
-                      sizes="(max-width: 720px) 100vw, 42vw"
-                    />
-                    <p className={styles.projectNumber} aria-hidden="true">
-                      {project.number}
-                    </p>
-                    {project.gallery.length ? (
-                      <div
-                        className={styles.projectGallery}
-                        role="group"
-                        aria-label="Atabei app screens"
-                      >
-                        {project.gallery.map((image) => (
-                          <div
-                            className={styles.projectThumbnail}
-                            key={image.src}
-                          >
-                            <Image
-                              src={image.src}
-                              alt={image.alt}
-                              fill
-                              sizes="52px"
-                            />
-                          </div>
-                        ))}
-                      </div>
-                    ) : null}
-                  </div>
-
-                  <div className={styles.projectInfo}>
-                    <div className={styles.projectHeading}>
-                      {project.logo ? (
-                        <div className={styles.projectLogo} aria-hidden="true">
-                          <Image src={project.logo} alt="" fill sizes="44px" />
-                        </div>
-                      ) : null}
-                      <div>
-                        <p>{project.category}</p>
-                        <h3>{project.title}</h3>
-                      </div>
-                    </div>
-
-                    <p className={styles.projectDescription}>
-                      {project.description}
-                    </p>
-                    <ul
-                      className={styles.projectTags}
-                      aria-label="Project technologies"
-                    >
-                      {project.tags.map((tag) => (
-                        <li key={tag}>{tag}</li>
-                      ))}
-                    </ul>
-                    <a
-                      className={styles.projectLink}
-                      href={project.link}
-                      target="_blank"
-                      rel="noreferrer"
-                      aria-label={`${project.linkLabel}: ${project.title} (opens in a new tab)`}
-                    >
-                      {project.linkLabel} <ArrowIcon />
-                    </a>
-                  </div>
-                </article>
-              ))}
+            <div className={styles.sectionContent}>
+              <ProjectShowcase />
             </div>
           </div>
         </section>
