@@ -35,7 +35,7 @@ export default function Navigation() {
         return;
       }
 
-      const readingLine = window.innerHeight * 0.34;
+      const readingLine = window.innerHeight * 0.28;
       let currentSection = sections[0]?.id ?? "presentation";
 
       for (const section of sections) {
@@ -77,52 +77,42 @@ export default function Navigation() {
 
   return (
     <header className={styles.siteHeader}>
-      <div className={styles.brandRow}>
+      <div className={styles.headerInner}>
         <a
           className={styles.brand}
           href="#presentation"
           aria-label="Harry Ruiz — back to introduction"
           onClick={() => setActiveSection("presentation")}
         >
-          HR<span aria-hidden="true">.</span>
+          <span aria-hidden="true">HR</span>
+          <span>Harry Ruiz</span>
         </a>
-        <p className={styles.brandDescriptor}>
-          Software
-          <br />
-          Engineering Student
-        </p>
+
+        <nav className={styles.navigation} aria-label="Primary navigation">
+          <ol className={styles.navigationList}>
+            {navigationItems.map((item) => {
+              const isActive = activeSection === item.id;
+
+              return (
+                <li key={item.id}>
+                  <a
+                    className={`${styles.navigationLink} ${
+                      isActive ? styles.navigationLinkActive : ""
+                    }`}
+                    href={`#${item.id}`}
+                    aria-current={isActive ? "location" : undefined}
+                    onClick={() => setActiveSection(item.id)}
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              );
+            })}
+          </ol>
+        </nav>
+
+        <p className={styles.headerMeta}>Mayagüez, Puerto Rico</p>
       </div>
-
-      <nav className={styles.navigation} aria-label="Primary navigation">
-        <ol className={styles.navigationList}>
-          {navigationItems.map((item, index) => {
-            const isActive = activeSection === item.id;
-
-            return (
-              <li key={item.id}>
-                <a
-                  className={`${styles.navigationLink} ${
-                    isActive ? styles.navigationLinkActive : ""
-                  }`}
-                  href={`#${item.id}`}
-                  aria-current={isActive ? "location" : undefined}
-                  onClick={() => setActiveSection(item.id)}
-                >
-                  <span className={styles.navigationNumber} aria-hidden="true">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <span>{item.label}</span>
-                  <span className={styles.navigationMark} aria-hidden="true" />
-                </a>
-              </li>
-            );
-          })}
-        </ol>
-      </nav>
-
-      <p className={styles.location}>
-        Mayagüez, Puerto Rico · Third-year student
-      </p>
     </header>
   );
 }

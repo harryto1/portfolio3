@@ -1,14 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  --canvas: #f2f0e9;
-  --paper: #f8f6ef;
+  --canvas: #fafaf8;
+  --panel: #f2f2ef;
   --ink: #171716;
-  --muted: #6f6d67;
-  --line: #d2cfc5;
-  --accent: #3155ff;
-  --lime: #c9f26b;
-  --coral: #ff684b;
+  --muted: #696966;
+  --line: #deded9;
+  --line-strong: #aaa9a3;
+  --accent: #2855d9;
 }
 
 @theme inline {
@@ -24,7 +23,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 0;
+  scroll-padding-top: 4.5rem;
 }
 
 body {
@@ -47,13 +46,13 @@ a {
 }
 
 :focus-visible {
-  outline: 3px solid var(--accent);
-  outline-offset: 4px;
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 760px) {
   html {
-    scroll-padding-top: 108px;
+    scroll-padding-top: 6rem;
   }
 }
 
