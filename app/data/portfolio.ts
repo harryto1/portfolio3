@@ -1,0 +1,163 @@
+export type PortfolioImage = {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+};
+
+export type Project = {
+  title: string;
+  category: string;
+  description: string;
+  tags: readonly string[];
+  image: PortfolioImage;
+  logo: PortfolioImage | null;
+  gallery: readonly PortfolioImage[];
+  link: string;
+  linkLabel: string;
+  features: readonly string[];
+  challenges: readonly string[];
+  learnings: readonly string[];
+};
+
+export const experiences = [
+  {
+    period: "Jul — Dec 2025",
+    role: "Software Developer",
+    company: "MiUni LLC · Puerto Rico",
+    companyUrl: "https://www.miunipr.com",
+    description:
+      "Built responsive iOS and Android features, secured sensitive client data, and moved selected API calls to Firebase Functions.",
+    skills: ["Flutter", "Dart", "Firebase", "Git"],
+  },
+] as const;
+
+export const education = [
+  {
+    period: "2024 — Expected 2029",
+    degree: "Bachelor of Science in Software Engineering",
+    school: "University of Puerto Rico — Mayagüez",
+    schoolUrl: "https://www.uprm.edu",
+    note: "Third-year student · 4.0 GPA · Data Structures, Advanced Programming, Fundamentals of Computing, and Calculus I & II.",
+  },
+] as const;
+
+export const skillGroups = [
+  {
+    title: "Frontend",
+    items: ["React", "TypeScript", "HTML / CSS", "JavaScript"],
+  },
+  {
+    title: "Backend",
+    items: ["Flask", "PostgreSQL", "REST APIs"],
+  },
+  {
+    title: "Mobile",
+    items: ["Flutter", "Dart", "Bloc", "Firebase"],
+  },
+  {
+    title: "Tools",
+    items: ["Git", "Firebase", "VS Code"],
+  },
+] as const;
+
+export const projects: readonly Project[] = [
+  {
+    title: "Fórmula al Éxito",
+    category: "Full-stack · 2025",
+    description:
+      "A tutoring platform with booking, live chat, video calls, whiteboards, recordings, learning resources, and admin tools.",
+    tags: ["Flask", "PostgreSQL", "Socket.IO", "JavaScript"],
+    image: {
+      src: "/faeBanner.png",
+      alt: "Fórmula al Éxito tutoring platform homepage",
+      width: 1920,
+      height: 1080,
+    },
+    logo: {
+      src: "/thumbnail_Logo_sin_FAE_sin_diseños_PNG.png",
+      alt: "",
+      width: 695,
+      height: 681,
+    },
+    gallery: [],
+    link: "https://www.formulaalexito.com",
+    linkLabel: "Visit live site",
+    features: [
+      "Authentication and authorization",
+      "Real-time chat and video conferencing",
+      "Interactive whiteboards and recordings",
+      "Learning resource library",
+      "User and content administration",
+      "Responsive mobile and desktop experience",
+    ],
+    challenges: [
+      "Integrating real-time video and chat",
+      "Designing an intuitive tutoring workflow",
+      "Protecting user data and privacy",
+      "Managing complex database relationships",
+    ],
+    learnings: [
+      "Advanced Flask development",
+      "Hosting and deployment strategies",
+      "Socket programming with Flask-SocketIO",
+      "SQLAlchemy and PostgreSQL database design",
+    ],
+  },
+  {
+    title: "Atabei",
+    category: "Mobile · 2025",
+    description:
+      "An in-progress Flutter social app with authentication, real-time posts, profiles, search, and notifications for iOS and Android.",
+    tags: ["Flutter", "Bloc", "Dart", "Firebase"],
+    image: {
+      src: "/atabei_banner.png",
+      alt: "Atabei social app timeline",
+      width: 1080,
+      height: 533,
+    },
+    logo: null,
+    gallery: [
+      {
+        src: "/atabei_img_1.png",
+        alt: "Atabei profile screen",
+        width: 1080,
+        height: 1787,
+      },
+      {
+        src: "/atabei_img_2.png",
+        alt: "Atabei search screen",
+        width: 1080,
+        height: 1076,
+      },
+      {
+        src: "/atabei_img_3.png",
+        alt: "Atabei feed screen",
+        width: 1080,
+        height: 1294,
+      },
+    ],
+    link: "https://github.com/harryto1/atabei",
+    linkLabel: "View on GitHub",
+    features: [
+      "Firebase authentication",
+      "Real-time timeline and Firestore updates",
+      "Post creation and editing",
+      "User profiles and search",
+      "Push notification system",
+      "Cross-platform iOS and Android support",
+    ],
+    challenges: [
+      "Real-time data synchronization",
+      "Responsive UI across screen sizes",
+      "State management with Bloc",
+      "Firebase Cloud Messaging integration",
+    ],
+    learnings: [
+      "Flutter clean architecture",
+      "Effective state management with Bloc",
+      "Firebase services and integration",
+      "Cross-platform mobile development",
+    ],
+  },
+];
