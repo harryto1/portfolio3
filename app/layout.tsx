@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     description: siteDescription,
     images: [
       {
-        url: "/harry.jpg",
+        url: "/og-image.png",
         width: 641,
         height: 960,
         alt: "Harry Ruiz, Software Engineering student",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     card: "summary",
     title: siteTitle,
     description: siteDescription,
-    images: ["/harry.jpg"],
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,

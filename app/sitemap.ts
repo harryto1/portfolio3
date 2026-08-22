@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 1,
       images: [
+        `${siteUrl}/og-image.png`,
         `${siteUrl}/harry.jpg`,
         `${siteUrl}/faeBanner.png`,
         `${siteUrl}/atabei_banner.png`,

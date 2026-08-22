@@ -38,18 +38,34 @@ export const education = [
     degree: "Bachelor of Science in Software Engineering",
     school: "University of Puerto Rico — Mayagüez",
     schoolUrl: "https://www.uprm.edu",
-    note: "Third-year student · 4.0 GPA · Data Structures, Advanced Programming, Fundamentals of Computing, and Calculus I & II.",
+    note: "3rd year student · 3.7 GPA · Introduction to Software Engineering, Analysis and Design of Algorithms, Data Structures",
   },
 ] as const;
 
 export const skillGroups = [
   {
     title: "Frontend",
-    items: ["React", "TypeScript", "HTML / CSS", "JavaScript"],
+    items: [
+      "Next.js",
+      "TailwindCSS",
+      "React",
+      "TypeScript",
+      "HTML / CSS",
+      "JavaScript",
+    ],
   },
   {
     title: "Backend",
-    items: ["Flask", "PostgreSQL", "REST APIs"],
+    items: [
+      "Spring Boot",
+      "Flask",
+      "PostgreSQL",
+      "REST APIs",
+      "RabbitMQ",
+      "WebSockets",
+      "Redis",
+      "JWT",
+    ],
   },
   {
     title: "Mobile",
@@ -57,7 +73,7 @@ export const skillGroups = [
   },
   {
     title: "Tools",
-    items: ["Git", "Firebase", "VS Code"],
+    items: ["Git", "Firebase", "VS Code", "Docker", "Postman"],
   },
 ] as const;
 
