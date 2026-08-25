@@ -27,14 +27,14 @@ export default function ProjectShowcase() {
       <div className="grid grid-cols-2 gap-4 max-[760px]:grid-cols-1">
         {projects.map((project) => (
           <button
-            className="group grid w-full min-w-0 cursor-pointer grid-rows-[auto_1fr] overflow-hidden rounded-[0.7rem] border border-line bg-canvas p-0 text-left font-[inherit] text-[inherit] transition [transition-duration:180ms] hover:-translate-y-0.5 hover:border-line-strong hover:shadow-[0_0.8rem_2rem_rgb(18_18_18_/_7%)]"
+            className="group grid w-full min-w-0 cursor-pointer grid-rows-[auto_1fr] overflow-hidden rounded-[0.7rem] border border-line bg-canvas p-0 text-left font-[inherit] text-inherit transition duration-180 hover:-translate-y-0.5 hover:border-line-strong hover:shadow-[0_0.8rem_2rem_rgb(18_18_18/7%)]"
             type="button"
             key={project.title}
             aria-label={`View details for ${project.title}`}
             aria-haspopup="dialog"
             onClick={() => setActiveProject(project)}
           >
-            <span className="grid place-items-center overflow-hidden border-b border-line bg-[#e5e5e1]">
+            <span className="grid place-items-center overflow-hidden border-b border-line bg-[#e5e1e1]">
               <Image
                 className="block h-auto w-full"
                 src={project.image.src}
@@ -46,11 +46,11 @@ export default function ProjectShowcase() {
               />
             </span>
 
-            <span className="flex min-h-72 flex-col p-[1.35rem] max-[760px]:min-h-[16.5rem]">
+            <span className="flex min-h-72 flex-col p-[1.35rem] max-[760px]:min-h-66">
               <span className="flex min-h-[3.4rem] items-center gap-[0.8rem]">
                 {project.logo ? (
                   <span
-                    className="grid aspect-square w-[2.8rem] flex-[0_0_2.8rem] place-items-center overflow-hidden rounded-full border border-line bg-white"
+                    className="grid aspect-square w-[2.8rem] flex-[0_0_2.8rem] place-items-center rounded-full bg-white"
                     aria-hidden="true"
                   >
                     <Image
@@ -73,7 +73,7 @@ export default function ProjectShowcase() {
                 </span>
               </span>
 
-              <span className="mt-4 block max-w-[31rem] text-[0.84rem] leading-[1.6] text-muted">
+              <span className="mt-4 block max-w-124 text-[0.84rem] leading-[1.6] text-muted">
                 {project.description}
               </span>
               <span
@@ -102,7 +102,7 @@ export default function ProjectShowcase() {
       </div>
 
       <dialog
-        className="m-auto max-h-[min(90dvh,58rem)] w-[min(calc(100%_-_2rem),64rem)] max-w-none overflow-auto rounded-[0.85rem] border border-line bg-canvas p-0 text-ink shadow-[0_1.5rem_5rem_rgb(18_18_18_/_24%)] backdrop:bg-[rgb(17_17_16_/_62%)] backdrop:backdrop-blur-[4px] open:animate-[dialog-in_240ms_cubic-bezier(0.22,1,0.36,1)_both] max-[760px]:max-h-[94dvh] max-[760px]:w-[calc(100%_-_1rem)] max-[760px]:rounded-[0.7rem]"
+        className="m-auto max-h-[min(90dvh,58rem)] w-[min(calc(100%-2rem),64rem)] max-w-none overflow-auto rounded-[0.85rem] border border-line bg-canvas p-0 text-ink shadow-[0_1.5rem_5rem_rgb(18_18_18/24%)] backdrop:bg-[rgb(17_17_16/62%)] backdrop:backdrop-blur-xs open:animate-[dialog-in_240ms_cubic-bezier(0.22,1,0.36,1)_both] max-[760px]:max-h-[94dvh] max-[760px]:w-[calc(100%-1rem)] max-[760px]:rounded-[0.7rem]"
         ref={dialogRef}
         aria-labelledby="project-dialog-title"
         aria-describedby="project-dialog-description"
@@ -125,7 +125,7 @@ export default function ProjectShowcase() {
       >
         {activeProject ? (
           <div className="min-w-0">
-            <header className="sticky top-0 z-[5] flex items-center justify-between gap-6 border-b border-line bg-[rgb(250_250_248_/_94%)] px-[1.35rem] py-[1.2rem] backdrop-blur-[12px] max-[760px]:p-4">
+            <header className="sticky top-0 z-5 flex items-center justify-between gap-6 border-b border-line bg-[rgb(250_250_248/94%)] px-[1.35rem] py-[1.2rem] backdrop-blur-md max-[760px]:p-4">
               <div>
                 <p className="mb-[0.3rem] font-mono text-[0.58rem] tracking-[0.065em] text-muted uppercase">
                   {activeProject.category}
@@ -150,7 +150,7 @@ export default function ProjectShowcase() {
 
             <div className="grid place-items-center border-b border-line bg-panel p-[clamp(0.75rem,2.5vw,2rem)]">
               <Image
-                className="block h-auto w-full max-w-[54rem]"
+                className="block h-auto w-full max-w-216"
                 src={activeProject.image.src}
                 alt={activeProject.image.alt}
                 width={activeProject.image.width}

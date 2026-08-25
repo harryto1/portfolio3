@@ -38,7 +38,7 @@ export const education = [
     degree: "Bachelor of Science in Software Engineering",
     school: "University of Puerto Rico — Mayagüez",
     schoolUrl: "https://www.uprm.edu",
-    note: "3rd year student · 3.7 GPA · Introduction to Software Engineering, Analysis and Design of Algorithms, Data Structures",
+    note: "3rd year student · 3.27 GPA · Introduction to Software Engineering, Analysis and Design of Algorithms, Data Structures",
   },
 ] as const;
 
@@ -78,6 +78,58 @@ export const skillGroups = [
 ] as const;
 
 export const projects: readonly Project[] = [
+  {
+    title: "Fórmula al Éxito v2",
+    category: "Full-stack · 2026",
+    description:
+      "An updated version of the Fórmula al Éxito platform with improved features, an horizontally scalable design, and enhanced security measures.",
+    tags: [
+      "Next.js",
+      "TailwindCSS",
+      "TypeScript",
+      "Spring Boot",
+      "RabbitMQ",
+      "Redis",
+      "JWT",
+      "Kotlin",
+      "PostgreSQL",
+    ],
+    image: {
+      src: "/faev2-banner.png",
+      alt: "Fórmula al Éxito tutoring platform homepage",
+      width: 1920,
+      height: 1080,
+    },
+    logo: {
+      src: "/thumbnail_Logo_sin_FAE_sin_diseños_PNG.png",
+      alt: "",
+      width: 695,
+      height: 681,
+    },
+    gallery: [],
+    link: "https://www.formulaalexito.com",
+    linkLabel: "Visit live site",
+    features: [
+      "Authentication and authorization",
+      "Real-time chat and video conferencing",
+      "Interactive whiteboards and recordings",
+      "Learning resource library",
+      "User and content administration",
+      "Responsive mobile and desktop experience",
+    ],
+    challenges: [
+      "Integrating real-time video and chat",
+      "Designing an intuitive tutoring workflow",
+      "Protecting user data and privacy",
+      "Managing complex database relationships",
+    ],
+    learnings: [
+      "Advanced Next.js development",
+      "Hosting and deployment strategies",
+      "Socket programming with Socket.IO",
+      "PostgreSQL database design and optimization",
+    ],
+  },
   {
     title: "Fórmula al Éxito",
     category: "Full-stack · 2025",
