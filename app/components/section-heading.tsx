@@ -19,10 +19,7 @@ export default function SectionHeading({
       >
         {index}
       </p>
-      <h2
-        className="m-0 text-[1.15rem] font-[610] tracking-[-0.035em]"
-        id={id}
-      >
+      <h2 className="m-0 text-[1.15rem] font-[610] tracking-[-0.035em]" id={id}>
         {children}
       </h2>
     </header>

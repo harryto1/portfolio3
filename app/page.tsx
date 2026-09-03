@@ -61,7 +61,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-canvas">
       <a
-        className="fixed top-3 left-3 z-[100] -translate-y-[180%] rounded-[0.35rem] bg-ink px-[0.9rem] py-[0.7rem] text-[0.8rem] text-white transition-transform [transition-duration:160ms] focus:translate-y-0"
+        className="fixed top-3 left-3 z-100 translate-y-[-180%] rounded-[0.35rem] bg-ink px-[0.9rem] py-[0.7rem] text-[0.8rem] text-white transition-transform duration-160 focus:translate-y-0"
         href="#main-content"
       >
         Skip to main content

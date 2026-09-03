@@ -98,8 +98,8 @@ export default function Navigation() {
   } as CSSProperties;
 
   return (
-    <header className="sticky top-0 z-50 border-b border-line bg-[rgb(250_250_248_/_92%)] backdrop-blur-[14px]">
-      <div className="mx-auto grid min-h-16 w-[calc(100%_-_3rem)] max-w-[74rem] grid-cols-[auto_1fr_auto] items-center gap-[clamp(1.5rem,4vw,4rem)] max-[1000px]:grid-cols-[auto_1fr] max-[760px]:flex max-[760px]:min-h-0 max-[760px]:w-full max-[760px]:flex-wrap max-[760px]:gap-[0.55rem] max-[760px]:px-4 max-[760px]:pt-[0.7rem]">
+    <header className="sticky top-0 z-50 border-b border-line bg-[rgb(250_250_248/92%)] backdrop-blur-[14px]">
+      <div className="mx-auto grid min-h-16 w-[calc(100%-3rem)] max-w-296 grid-cols-[auto_1fr_auto] items-center gap-[clamp(1.5rem,4vw,4rem)] max-[1000px]:grid-cols-[auto_1fr] max-[760px]:flex max-[760px]:min-h-0 max-[760px]:w-full max-[760px]:flex-wrap max-[760px]:gap-[0.55rem] max-[760px]:px-4 max-[760px]:pt-[0.7rem]">
         <a
           className="inline-flex items-center gap-[0.7rem] text-[0.78rem] font-[650] whitespace-nowrap max-[760px]:w-full"
           href="#presentation"
@@ -117,12 +117,12 @@ export default function Navigation() {
         </a>
 
         <nav
-          className="min-w-0 max-[760px]:mx-[-1rem] max-[760px]:w-[calc(100%_+_2rem)] max-[760px]:overflow-x-auto max-[760px]:overscroll-x-contain max-[760px]:px-4 max-[760px]:[scrollbar-width:none] max-[760px]:[&::-webkit-scrollbar]:hidden"
+          className="min-w-0 max-[760px]:-mx-4 max-[760px]:w-[calc(100%+2rem)] max-[760px]:overflow-x-auto max-[760px]:overscroll-x-contain max-[760px]:px-4 max-[760px]:scrollbar-none max-[760px]:[&::-webkit-scrollbar]:hidden"
           aria-label="Primary navigation"
           ref={navigationRef}
         >
           <ol
-            className="relative mx-auto grid w-max list-none grid-cols-[repeat(7,var(--nav-item-width))] p-0 [--indicator-inset:0.85rem] [--nav-item-width:5.15rem] after:pointer-events-none after:absolute after:bottom-[-1px] after:left-0 after:box-border after:h-0.5 after:w-[var(--nav-item-width)] after:bg-accent after:bg-clip-content after:px-[var(--indicator-inset)] after:content-[''] after:[transform:translate3d(var(--indicator-x,0%),0,0)] after:transition-transform after:[transition-duration:280ms] after:[transition-timing-function:cubic-bezier(0.22,1,0.36,1)] max-[1000px]:mr-0 max-[760px]:mx-0"
+            className="relative mx-auto grid w-max list-none grid-cols-[repeat(7,var(--nav-item-width))] p-0 [--indicator-inset:0.85rem] [--nav-item-width:5.15rem] after:pointer-events-none after:absolute after:-bottom-px after:left-0 after:box-border after:h-0.5 after:w-(--nav-item-width) after:bg-accent after:bg-clip-content after:px-(--indicator-inset) after:content-[''] after:transform-[translate3d(var(--indicator-x,0%),0,0)] after:transition-transform after:duration-280 after:ease-[cubic-bezier(0.22,1,0.36,1)] max-[1000px]:mr-0 max-[760px]:mx-0"
             style={sliderPosition}
           >
             {navigationItems.map((item) => {
@@ -131,7 +131,7 @@ export default function Navigation() {
               return (
                 <li className="min-w-0 text-center" key={item.id}>
                   <a
-                    className={`relative block pt-[1.45rem] pb-[1.35rem] text-[0.72rem] transition-colors [transition-duration:160ms] hover:text-ink max-[760px]:pt-[0.6rem] max-[760px]:pb-[0.7rem] max-[760px]:text-[0.68rem] ${isActive ? "text-ink" : "text-muted"}`}
+                    className={`relative block pt-[1.45rem] pb-[1.35rem] text-[0.72rem] transition-colors duration-160 hover:text-ink max-[760px]:pt-[0.6rem] max-[760px]:pb-[0.7rem] max-[760px]:text-[0.68rem] ${isActive ? "text-ink" : "text-muted"}`}
                     href={`#${item.id}`}
                     aria-current={isActive ? "location" : undefined}
                   >
